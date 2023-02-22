@@ -5,6 +5,8 @@
 class Player : public GameObject
 {
 	int hModel_;    //ƒ‚ƒfƒ‹”Ô†
+	int AhModel_;
+	int panch_;
 
 	float gravity_, velocity_;//d—Í‚Æ‰‘¬
 

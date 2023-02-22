@@ -1,13 +1,18 @@
 #include "Player.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "Engine/CsvReader.h"
 
 #define VELOCITY 0.5
+#define GRAVITY_ 0.02
 
 //コンストラクタ
 Player::Player(GameObject* parent)
-	: GameObject(parent, "Player"), hModel_(-1), gravity_(0.02), velocity_(0)
+	: GameObject(parent, "Player"), hModel_(-1), gravity_(0.02), velocity_(0), panch_(100)
 {
+	/*CsvReader csv;
+	csv.Load("jamp.csv");*/
+
 }
 
 //初期化
@@ -17,12 +22,18 @@ void Player::Initialize()
 	hModel_ = Model::Load("player.fbx");
 	assert(hModel_ >= 0);
 
+	AhModel_ = Model::Load("attack player.fbx");
+	assert(AhModel_ >= 0);
+
+	
+
 }
 
 //更新
 void Player::Update()
 {
-
+	
+	panch_++;
 
 	transform_.position_.y += velocity_;
 
@@ -53,6 +64,12 @@ void Player::Update()
 	{
 		if (transform_.position_.x >= -20)
 			fMove.x -= 0.1f;
+	}
+	if (Input::IsKeyDown(DIK_V)) 
+	{
+
+		panch_ = 0;
+
 	}
 	if (Input::IsKeyDown(DIK_SPACE))
 	{
@@ -85,16 +102,19 @@ void Player::Update()
 
 			angle *= -1;
 		}
-
-
 		transform_.rotate_.y = XMConvertToDegrees(angle);
-
 	}
+
+	
 }
 
 //描画
 void Player::Draw()
 {
+	if (panch_ < 60) {
+		Model::SetTransform(AhModel_, transform_);
+		Model::Draw(AhModel_);
+	}
 	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
 }
