@@ -100,6 +100,11 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="MainCamera.cpp" />
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="LeftEnemy.cpp" />
+    <ClCompile Include="Fstage.cpp" />
+    <ClCompile Include="RightEnemy.cpp" />
+    <ClCompile Include="Panch.cpp" />
+    <ClCompile Include="Fire.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -176,6 +181,11 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="MainCamera.h" />
     <ClInclude Include="Core.h" />
+    <ClInclude Include="LeftEnemy.h" />
+    <ClInclude Include="Fstage.h" />
+    <ClInclude Include="RightEnemy.h" />
+    <ClInclude Include="Panch.h" />
+    <ClInclude Include="Fire.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

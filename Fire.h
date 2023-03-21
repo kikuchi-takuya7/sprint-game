@@ -2,16 +2,17 @@
 #include "Engine/GameObject.h"
 
 //◆◆◆を管理するクラス
-class Core : public GameObject
+class Fire : public GameObject
 {
     int hModel_;
+    int limit_;
 
 public:
     //コンストラクタ
-    Core(GameObject* parent);
+    Fire(GameObject* parent);
 
     //デストラクタ
-    ~Core();
+    ~Fire();
 
     //初期化
     void Initialize() override;

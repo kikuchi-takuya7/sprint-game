@@ -5,8 +5,9 @@
 class Player : public GameObject
 {
 	int hModel_;    //モデル番号
-	int AhModel_;
 	int panch_;
+	int fire_;
+
 
 	float gravity_, velocity_;//重力と初速
 
@@ -26,4 +27,10 @@ public:
 
 	//開放
 	void Release() override;
+
+	//何かに当たった
+	//引数：pTarget 当たった相手
+	void OnCollision(GameObject* pTarget) override;
+
+	void Cooldown();
 };

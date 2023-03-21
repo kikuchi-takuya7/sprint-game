@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Stage.h"
 #include "Core.h"
+#include "Fstage.h"
 #include "MainCamera.h"
 
 
@@ -14,6 +15,7 @@ GameScene::GameScene(GameObject* parent)
 //‰Šú‰»
 void GameScene::Initialize()
 {
+	Instantiate<Fstage>(this);
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
 	Instantiate<MainCamera>(this);

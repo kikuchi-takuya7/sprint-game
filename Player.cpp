@@ -1,4 +1,7 @@
 #include "Player.h"
+#include "Panch.h"
+#include "Fire.h"
+#include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
 #include "Engine/CsvReader.h"
@@ -8,7 +11,7 @@
 
 //コンストラクタ
 Player::Player(GameObject* parent)
-	: GameObject(parent, "Player"), hModel_(-1), gravity_(0.02), velocity_(0), panch_(100)
+	: GameObject(parent, "Player"), hModel_(-1), gravity_(0.02), velocity_(0), panch_(100), fire_(300)
 {
 	/*CsvReader csv;
 	csv.Load("jamp.csv");*/
@@ -22,10 +25,11 @@ void Player::Initialize()
 	hModel_ = Model::Load("player.fbx");
 	assert(hModel_ >= 0);
 
-	AhModel_ = Model::Load("attack player.fbx");
-	assert(AhModel_ >= 0);
+	/*AhModel_ = Model::Load("attack player.fbx");
+	assert(AhModel_ >= 0);*/
 
-	
+	BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 2, 1));
+	AddCollider(collision);
 
 }
 
@@ -33,7 +37,7 @@ void Player::Initialize()
 void Player::Update()
 {
 	
-	panch_++;
+	Cooldown();
 
 	transform_.position_.y += velocity_;
 
@@ -44,13 +48,15 @@ void Player::Update()
 		velocity_ -= gravity_;
 	}
 
+	if (Input::IsKeyDown(DIK_SPACE))
+	{
+		velocity_ = VELOCITY;
+	}
 
 	if (transform_.position_.y <= 0) {
 		transform_.position_.y = 0;
 	}
 
-
-	//prevPosition_ = transform_.position_;
 
 	XMFLOAT3 fMove = XMFLOAT3(0, 0, 0);
 
@@ -65,16 +71,6 @@ void Player::Update()
 		if (transform_.position_.x >= -20)
 			fMove.x -= 0.1f;
 	}
-	if (Input::IsKeyDown(DIK_V)) 
-	{
-
-		panch_ = 0;
-
-	}
-	if (Input::IsKeyDown(DIK_SPACE))
-	{
-		velocity_ = VELOCITY;
-	}
 
 	XMVECTOR vMove = XMLoadFloat3(&fMove);
 	vMove = XMVector3Normalize(vMove);
@@ -82,7 +78,6 @@ void Player::Update()
 	XMStoreFloat3(&fMove, vMove);
 
 	transform_.position_.x += fMove.x;
-	transform_.position_.z += fMove.z;
 
 
 	//短いほうの角度だけ求める向き方向
@@ -105,16 +100,32 @@ void Player::Update()
 		transform_.rotate_.y = XMConvertToDegrees(angle);
 	}
 
-	
+
+	if (Input::IsKeyDown(DIK_V) && panch_ >= 100)
+	{
+
+		Instantiate<Panch>(this);
+		panch_ = 0;
+
+	}
+
+	if (Input::IsKeyDown(DIK_F) && fire_ >= 200)
+	{
+
+		Instantiate<Fire>(this);
+		fire_ = 0;
+
+	}
+
 }
 
 //描画
 void Player::Draw()
 {
-	if (panch_ < 60) {
+	/*if (panch_ < 60) {
 		Model::SetTransform(AhModel_, transform_);
 		Model::Draw(AhModel_);
-	}
+	}*/
 	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
 }
@@ -122,4 +133,27 @@ void Player::Draw()
 //開放
 void Player::Release()
 {
+}
+
+
+//何かに当たった
+void Player::OnCollision(GameObject* pTarget)
+{
+	//当たったときの処理
+	if (pTarget->GetObjectName() == "RightEnemy")
+	{
+		KillMe();
+	}
+
+	if (pTarget->GetObjectName() == "LeftEnemy")
+	{
+		KillMe();
+	}
+
+}
+
+void Player::Cooldown()
+{
+	panch_++;
+	fire_++;
 }

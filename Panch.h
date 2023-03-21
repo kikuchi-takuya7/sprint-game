@@ -1,17 +1,18 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//◆◆◆を管理するクラス
-class Core : public GameObject
+class Panch : public GameObject
+
 {
+
     int hModel_;
+    int limit_;
+    int tmp_;
 
 public:
-    //コンストラクタ
-    Core(GameObject* parent);
 
-    //デストラクタ
-    ~Core();
+    Panch(GameObject* parent);
+    ~Panch();
 
     //初期化
     void Initialize() override;
@@ -25,6 +26,8 @@ public:
     //開放
     void Release() override;
 
+    //何かに当たった
     //引数：pTarget 当たった相手
     void OnCollision(GameObject* pTarget) override;
+
 };
