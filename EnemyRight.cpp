@@ -1,21 +1,21 @@
-#include "RightEnemy.h"
+#include "EnemyRight.h"
 #include "Engine/BoxCollider.h"
 #include "Engine/CsvReader.h"
 #include "Engine/Model.h"
 
 //コンストラクタ
-RightEnemy::RightEnemy(GameObject* parent)
-	:GameObject(parent, "RightEnemy"), hModel_(-1)
+EnemyRight::EnemyRight(GameObject* parent)
+	:GameObject(parent, "EnemyRight"), hModel_(-1)
 {
 }
 
 //デストラクタ
-RightEnemy::~RightEnemy()
+EnemyRight::~EnemyRight()
 {
 }
 
 //初期化
-void RightEnemy::Initialize()
+void EnemyRight::Initialize()
 {
 	//モデルデータのロード
 	hModel_ = Model::Load("player.fbx");
@@ -28,30 +28,34 @@ void RightEnemy::Initialize()
 }
 
 //更新
-void RightEnemy::Update()
+void EnemyRight::Update()
 {
 	transform_.position_.x -= 0.1f;
 }
 
 //描画
-void RightEnemy::Draw()
+void EnemyRight::Draw()
 {
 	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
 }
 
 //開放
-void RightEnemy::Release()
+void EnemyRight::Release()
 {
 }
 
 //何かに当たった
-void RightEnemy::OnCollision(GameObject* pTarget)
+void EnemyRight::OnCollision(GameObject* pTarget)
 {
 	//当たったときの処理
-	if (pTarget->GetObjectName() == "Panch")
+	if (pTarget->GetObjectName() == "PanchRight")
 	{
 		KillMe();
 	}
 
+	if (pTarget->GetObjectName() == "PanchLeft")
+	{
+		KillMe();
+	}
 }

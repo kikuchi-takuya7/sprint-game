@@ -2,21 +2,16 @@
 #include "Engine/GameObject.h"
 
 //◆◆◆を管理するクラス
-class Fstage : public GameObject
+class EnemyRight : public GameObject
 {
-    int x_;
-    int count_;
     int hModel_;
-    int epattern_;
-    int height_;
-    int** table_;
 
 public:
     //コンストラクタ
-    Fstage(GameObject* parent);
+    EnemyRight(GameObject* parent);
 
     //デストラクタ
-    ~Fstage();
+    ~EnemyRight();
 
     //初期化
     void Initialize() override;
@@ -29,4 +24,7 @@ public:
 
     //開放
     void Release() override;
+
+    //引数：pTarget 当たった相手
+    void OnCollision(GameObject* pTarget) override;
 };

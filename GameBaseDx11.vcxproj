@@ -127,7 +127,7 @@
   <ItemGroup>
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="Fire.cpp" />
-    <ClCompile Include="LeftEnemy.cpp" />
+    <ClCompile Include="EnemyLeft.cpp" />
     <ClCompile Include="Engine\Audio.cpp" />
     <ClCompile Include="Engine\BillBoard.cpp" />
     <ClCompile Include="Engine\BoxCollider.cpp" />
@@ -151,18 +151,19 @@
     <ClCompile Include="Engine\Text.cpp" />
     <ClCompile Include="Engine\Texture.cpp" />
     <ClCompile Include="Engine\Transform.cpp" />
-    <ClCompile Include="Fstage.cpp" />
+    <ClCompile Include="EnemyPatternFirst.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="MainCamera.cpp" />
-    <ClCompile Include="Panch.cpp" />
+    <ClCompile Include="PanchRight.cpp" />
+    <ClCompile Include="PanchLeft.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="RightEnemy.cpp" />
+    <ClCompile Include="EnemyRight.cpp" />
     <ClCompile Include="Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h" />
     <ClInclude Include="Fire.h" />
-    <ClInclude Include="LeftEnemy.h" />
+    <ClInclude Include="EnemyLeft.h" />
     <ClInclude Include="Engine\Audio.h" />
     <ClInclude Include="Engine\BillBoard.h" />
     <ClInclude Include="Engine\BoxCollider.h" />
@@ -186,12 +187,13 @@
     <ClInclude Include="Engine\Text.h" />
     <ClInclude Include="Engine\Texture.h" />
     <ClInclude Include="Engine\Transform.h" />
-    <ClInclude Include="Fstage.h" />
+    <ClInclude Include="EnemyPatternFirst.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="MainCamera.h" />
-    <ClInclude Include="Panch.h" />
+    <ClInclude Include="PanchRight.h" />
+    <ClInclude Include="PanchLeft.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="RightEnemy.h" />
+    <ClInclude Include="EnemyRight.h" />
     <ClInclude Include="Stage.h" />
   </ItemGroup>
   <ItemGroup>

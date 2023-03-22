@@ -2,16 +2,16 @@
 #include "Engine/GameObject.h"
 
 //◆◆◆を管理するクラス
-class RightEnemy : public GameObject
+class EnemyLeft : public GameObject
 {
     int hModel_;
 
 public:
     //コンストラクタ
-    RightEnemy(GameObject* parent);
+    EnemyLeft(GameObject* parent);
 
     //デストラクタ
-    ~RightEnemy();
+    ~EnemyLeft();
 
     //初期化
     void Initialize() override;

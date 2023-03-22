@@ -1,7 +1,7 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-class Panch : public GameObject
+class PanchRight : public GameObject
 
 {
 
@@ -11,8 +11,8 @@ class Panch : public GameObject
 
 public:
 
-    Panch(GameObject* parent);
-    ~Panch();
+    PanchRight(GameObject* parent);
+    ~PanchRight();
 
     //èâä˙âª
     void Initialize() override;
