@@ -2,6 +2,7 @@
 #include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
 #include "Engine/VFX.h"
+#include "Engine/Debug.h"
 
 #define LIMIT 300
 
@@ -21,7 +22,7 @@ void Fire::Initialize()
 {
 	
 	
-	//transform_.position_.y = 2;
+	
 
 	
 }
@@ -30,9 +31,14 @@ void Fire::Initialize()
 void Fire::Update()
 {
 	
-	
 	EmitterData data;
 	data.textureFileName = "cloudA.png";
+
+
+	firePositionX_ = transform_.position_.x;
+
+	Debug::Log(transform_.position_.x);
+
 	data.position = XMFLOAT3(firePositionX_ , firePositionY_, 0);
 	data.positionRnd = XMFLOAT3(0.1, 0, 0.1);
 	data.delay = 0;
@@ -62,14 +68,12 @@ void Fire::Update()
 	data.speed = 0.1f;
 	data.gravity = 0;
 
-
 	VFX::Start(data);
 	
 
 	int endEmit;
 
-
-	if (firePositionY_ >= 0) {
+	if (firePositionY_ >= 0 && transform_.rotate_.y == 90) {
 		firePositionY_ -= 0.02f;
 		firePositionX_ += 0.1f;
 	}

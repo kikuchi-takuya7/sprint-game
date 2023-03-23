@@ -2,6 +2,7 @@
 #include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "Engine/Debug.h"
 
 #define LIMIT 60
 
@@ -37,6 +38,8 @@ void PanchRight::Update()
 	if (limit_ == 0) {
 		KillMe();
 	}
+
+	Debug::Log(transform_.position_.x);
 
 }
 

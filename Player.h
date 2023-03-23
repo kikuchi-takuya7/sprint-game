@@ -7,7 +7,10 @@ class Player : public GameObject
 	int hModel_;    //ƒ‚ƒfƒ‹”Ô†
 	int panch_;
 	int fire_;
-
+	float firePX_;
+	float firePY_;
+	int firetmp_;
+	float fireVec_;
 
 	float gravity_, velocity_;//d—Í‚Æ‰‘¬
 
