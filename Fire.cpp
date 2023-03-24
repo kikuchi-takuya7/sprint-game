@@ -1,5 +1,6 @@
 #include "Fire.h"
-#include "Engine/BoxCollider.h"
+#include "Player.h"
+#include "Engine/SphereCollider.h"
 #include "Engine/Model.h"
 #include "Engine/VFX.h"
 #include "Engine/Debug.h"
@@ -21,25 +22,32 @@ Fire::~Fire()
 void Fire::Initialize()
 {
 	
+	Player* pPlayer = static_cast<Player*>(this->GetParent());
+	fireP_ = pPlayer->GetPosition();
+	fireV_ = pPlayer->GetRotate();
+	fireP_.y += 2;
+
+	
 	
 	
 
-	
 }
 
 //XV
 void Fire::Update()
 {
-	
+
+	ClearCollider();
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(fireP_), 0.8f);
+	AddCollider(collision);
+
+
+	Debug::Log(fireP_.x);
+
+
 	EmitterData data;
 	data.textureFileName = "cloudA.png";
-
-
-	firePositionX_ = transform_.position_.x;
-
-	Debug::Log(transform_.position_.x);
-
-	data.position = XMFLOAT3(firePositionX_ , firePositionY_, 0);
+	data.position = XMFLOAT3(fireP_);
 	data.positionRnd = XMFLOAT3(0.1, 0, 0.1);
 	data.delay = 0;
 	data.number = 1;
@@ -70,15 +78,19 @@ void Fire::Update()
 
 	VFX::Start(data);
 	
-
 	int endEmit;
 
-	if (firePositionY_ >= 0 && transform_.rotate_.y == 90) {
-		firePositionY_ -= 0.02f;
-		firePositionX_ += 0.1f;
+	if (fireP_.y >= 0 && fireV_.y == 90) {
+		fireP_.y -= 0.02f;
+		fireP_.x += 0.1f;
 	}
 
-	if (firePositionY_ <= 0) {
+	if (fireP_.y >= 0 && fireV_.y == -90) {
+		fireP_.y -= 0.02f;
+		fireP_.x -= 0.1f;
+	}
+
+	if (fireP_.y <= 0) {
 		limit_--;
 	}
 
@@ -87,12 +99,16 @@ void Fire::Update()
 		VFX::End(endEmit);
 		KillMe();
 	}
+	
+	
 
 }
 
 //•`‰æ
 void Fire::Draw()
 {
+
+	CollisionDraw();
 	
 }
 

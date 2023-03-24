@@ -23,7 +23,7 @@ void PanchLeft::Initialize()
 	hModel_ = Model::Load("attack player.fbx");
 	assert(hModel_ >= 0);
 
-	BoxCollider* collision = new BoxCollider(XMFLOAT3(-1, 0, 0), XMFLOAT3(1, 0.3, 0.5));
+	BoxCollider* collision = new BoxCollider(XMFLOAT3(-1, 1, 0), XMFLOAT3(1, 0.3, 0.5));
 	AddCollider(collision);
 
 }
@@ -47,6 +47,7 @@ void PanchLeft::Draw()
 {
 	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
+
 }
 
 //ŠJ•ú

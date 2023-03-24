@@ -8,7 +8,9 @@ class Fire : public GameObject
     int limit_;
     float firePositionY_;
     float firePositionX_;
-    
+    //Player* pPlayer_;
+    XMFLOAT3 fireP_;
+    XMFLOAT3 fireV_;
 
 public:
     //コンストラクタ
