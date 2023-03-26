@@ -62,7 +62,7 @@ void EnemyLeft::OnCollision(GameObject* pTarget)
 		KillMe();
 	}
 
-	if (pTarget->GetObjectName() == "Fire")
+	if (pTarget->GetObjectName() == "FireCollision")
 	{
 		KillMe();
 	}

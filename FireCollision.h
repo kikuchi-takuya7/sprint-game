@@ -2,25 +2,17 @@
 #include "Engine/GameObject.h"
 
 //◆◆◆を管理するクラス
-class Fire : public GameObject
+class FireCollision : public GameObject
 {
-    int hModel_;
-    int limit_;
-    float firePositionY_;
-    float firePositionX_;
-    //Player* pPlayer_;
-    XMFLOAT3 fireV_;
-    //SphereCollider* collision;
-
-//public:
-    XMFLOAT3 fireP_;
+    
+    XMFLOAT3 fireCP_;
 
 public:
     //コンストラクタ
-    Fire(GameObject* parent);
+    FireCollision(GameObject* parent);
 
     //デストラクタ
-    ~Fire();
+    ~FireCollision();
 
     //初期化
     void Initialize() override;
@@ -37,3 +29,4 @@ public:
     //引数：pTarget 当たった相手
     void OnCollision(GameObject* pTarget) override;
 };
+

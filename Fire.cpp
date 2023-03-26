@@ -1,6 +1,8 @@
 #include "Fire.h"
 #include "Player.h"
+#include "FireCollision.h"
 #include "Engine/SphereCollider.h"
+#include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
 #include "Engine/VFX.h"
 #include "Engine/Debug.h"
@@ -22,13 +24,15 @@ Fire::~Fire()
 void Fire::Initialize()
 {
 	
+	//親クラスのポインタをゲットしてそこから座標とかをゲットする。findObjectは名前で検索
+
 	Player* pPlayer = static_cast<Player*>(this->GetParent());
 	fireP_ = pPlayer->GetPosition();
 	fireV_ = pPlayer->GetRotate();
 	fireP_.y += 2;
 
 	
-	
+	Instantiate<FireCollision>(this);
 	
 
 }
@@ -37,9 +41,13 @@ void Fire::Initialize()
 void Fire::Update()
 {
 
-	ClearCollider();
-	SphereCollider* collision = new SphereCollider(XMFLOAT3(fireP_), 0.8f);
-	AddCollider(collision);
+	transform_.position_ = fireP_;
+
+	/*ClearCollider();
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(0,0,0), 0.8f);
+	AddCollider(collision);*/
+
+	//transform_.position_.y += 0.1f;
 
 
 	Debug::Log(fireP_.x);
@@ -48,6 +56,7 @@ void Fire::Update()
 	EmitterData data;
 	data.textureFileName = "cloudA.png";
 	data.position = XMFLOAT3(fireP_);
+	Debug::Log(fireP_.x);
 	data.positionRnd = XMFLOAT3(0.1, 0, 0.1);
 	data.delay = 0;
 	data.number = 1;
