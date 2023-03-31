@@ -153,6 +153,7 @@
     <ClCompile Include="Engine\Transform.cpp" />
     <ClCompile Include="EnemyPatternFirst.cpp" />
     <ClCompile Include="FireCollision.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="MainCamera.cpp" />
     <ClCompile Include="PanchRight.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="Engine\Transform.h" />
     <ClInclude Include="EnemyPatternFirst.h" />
     <ClInclude Include="FireCollision.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="MainCamera.h" />
     <ClInclude Include="PanchRight.h" />

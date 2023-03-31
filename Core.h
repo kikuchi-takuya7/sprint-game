@@ -5,6 +5,7 @@
 class Core : public GameObject
 {
     int hModel_;
+    int die_;
 
 public:
     //コンストラクタ

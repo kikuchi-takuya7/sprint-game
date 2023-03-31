@@ -1,10 +1,11 @@
 #include "Core.h"
+#include "GameOver.h"
 #include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
 
 //コンストラクタ
 Core::Core(GameObject* parent)
-    :GameObject(parent, "Core"), hModel_(-1)
+    :GameObject(parent, "Core"), hModel_(-1), die_(300)
 {
 }
 
@@ -20,6 +21,8 @@ void Core::Initialize()
 	hModel_ = Model::Load("core.fbx");
 	assert(hModel_ >= 0);
 
+	BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 2, 1));
+	AddCollider(collision);
 	
 }
 
@@ -28,7 +31,11 @@ void Core::Update()
 {
 	transform_.rotate_.y += 1;
 
+	die_++;
 
+	if (die_ == 60) {
+		KillMe();
+	}
 }
 
 //描画
@@ -47,5 +54,15 @@ void Core::Release()
 void Core::OnCollision(GameObject* pTarget)
 {
 	//当たったときの処理
+	if (pTarget->GetObjectName() == "EnemyRight")
+	{
+		die_ = 0;
+		Instantiate<GameOver>(this);
+	}
 
+	if (pTarget->GetObjectName() == "EnemyLeft")
+	{
+		die_ = 0;
+		Instantiate<GameOver>(this);
+	}
 }

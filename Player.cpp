@@ -98,7 +98,7 @@ void Player::Update()
 
 	}
 
-	if (Input::IsKeyDown(DIK_F) && fire_ >= 200 || firetmp_ == 1)
+	if (Input::IsKeyDown(DIK_F) && fire_ >= 300 || firetmp_ == 1)
 	{
 		Instantiate<Fire>(this);
 		fire_ = 0;

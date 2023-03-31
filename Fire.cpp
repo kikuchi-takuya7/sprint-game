@@ -7,7 +7,7 @@
 #include "Engine/VFX.h"
 #include "Engine/Debug.h"
 
-#define LIMIT 300
+#define LIMIT 200
 
 //コンストラクタ
 Fire::Fire(GameObject* parent)

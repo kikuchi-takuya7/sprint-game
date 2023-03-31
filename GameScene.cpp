@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Stage.h"
 #include "Core.h"
+#include "GameOver.h"
 #include "EnemyPatternFirst.h"
 #include "MainCamera.h"
 
@@ -20,6 +21,7 @@ void GameScene::Initialize()
 	Instantiate<Stage>(this);
 	Instantiate<MainCamera>(this);
 	Instantiate<Core>(this);
+
 }
 
 //XV
