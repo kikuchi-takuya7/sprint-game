@@ -161,6 +161,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="EnemyRight.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h" />
@@ -199,6 +200,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="EnemyRight.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="Title.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\BillBoard.hlsl">

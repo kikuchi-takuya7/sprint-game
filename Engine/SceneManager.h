@@ -6,7 +6,7 @@
 enum SCENE_ID
 {
 	SCENE_ID_MAIN = 0,
-	SCENE_ID_,
+	SCENE_ID_TITLE,
 
 };
 
