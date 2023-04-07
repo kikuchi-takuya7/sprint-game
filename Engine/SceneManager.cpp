@@ -1,5 +1,6 @@
 #include "sceneManager.h"
 #include "../Title.h"
+#include "../Tutorial.h"
 #include "../GameScene.h"
 #include "Model.h"
 #include "Image.h"
@@ -40,6 +41,7 @@ void SceneManager::Update()
 		{
 		case SCENE_ID_MAIN: Instantiate<GameScene>(this); break;
 		case SCENE_ID_TITLE: Instantiate<Title>(this); break;
+		case SCENE_ID_TUTORIAL: Instantiate<Tutorial>(this); break;
 
 		}
 		Audio::Initialize();

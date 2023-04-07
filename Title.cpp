@@ -7,7 +7,7 @@
 
 //コンストラクタ
 Title::Title(GameObject* parent)
-	: GameObject(parent, "Title"),hPict_(-1), opacity_(255), pText_(nullptr), tmp_(0)
+	: GameObject(parent, "Title"),hPict_(-1), pText_(nullptr), tmp_(0), flash_(0), start_(0)
 {
 }
 
@@ -29,34 +29,27 @@ void Title::Initialize()
 void Title::Update()
 {
 
+
 	if (Input::IsKeyDown(DIK_SPACE)) {
 
+		start_ = 1;
+
+	}
+
+	if (tmp_ >= 60) {
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-		pSceneManager->ChangeScene(SCENE_ID_MAIN);
-
+		pSceneManager->ChangeScene(SCENE_ID_TUTORIAL);
 	}
 
-	Image::SetAlpha(hPict_, opacity_);
-
-	if (opacity_ >= 255) {
-		tmp_ = 0;
-	}
-	if(opacity_ <= 0) {
-		tmp_ = 1;
+	if (start_ == 1) {
+		tmp_++;
 	}
 
-	if (tmp_ == 0) {
-		opacity_ -= 3;
-
+	flash_++;
+	if (flash_ >= 60) {
+		flash_ = 0;
 	}
 	
-	if (tmp_ == 1) {
-		opacity_ += 3;
-	
-	}
-
-
-	pText_->Draw(0, 0, "Pleas SPACE");
 
 }
 
@@ -66,6 +59,20 @@ void Title::Draw()
 	
 	Image::SetTransform(hPict_, transform_);
 	Image::Draw(hPict_);
+
+	if (start_ == 0) {
+		if (flash_ < 30) {
+
+			pText_->Draw(550, 600, "Pleas SPACE");
+		}
+	}
+	
+
+	if (start_ == 1) {
+		if (flash_ % 10 == 0) {
+			pText_->Draw(550, 600, "Pleas SPACE");
+		}
+	}
 
 }
 

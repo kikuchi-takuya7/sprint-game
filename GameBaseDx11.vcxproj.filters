@@ -109,6 +109,7 @@
     <ClCompile Include="FireCollision.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Title.cpp" />
+    <ClCompile Include="Tutorial.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -194,6 +195,7 @@
     <ClInclude Include="FireCollision.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Title.h" />
+    <ClInclude Include="Tutorial.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

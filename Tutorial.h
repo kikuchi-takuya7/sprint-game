@@ -1,20 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Engine/Text.h"
 
-//テストシーンを管理するクラス
-class Title : public GameObject
+
+//■■シーンを管理するクラス
+class Tutorial : public GameObject
 {
-	int hPict_;    //画像番号
-	Text* pText_;
-	int tmp_;
-	int flash_;
-	int start_;
-
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Title(GameObject* parent);
+	Tutorial(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
