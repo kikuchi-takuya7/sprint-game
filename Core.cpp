@@ -1,11 +1,12 @@
 #include "Core.h"
 #include "GameOver.h"
+#include "GameScene.h"
 #include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
 
 //コンストラクタ
 Core::Core(GameObject* parent)
-    :GameObject(parent, "Core"), hModel_(-1), die_(300)
+    :GameObject(parent, "Core"), hModel_(-1), die_(1)
 {
 }
 
@@ -31,9 +32,7 @@ void Core::Update()
 {
 	transform_.rotate_.y += 1;
 
-	die_++;
-
-	if (die_ == 60) {
+	if (die_ == 0) {
 		KillMe();
 	}
 }

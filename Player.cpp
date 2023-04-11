@@ -13,7 +13,7 @@
 
 //コンストラクタ
 Player::Player(GameObject* parent)
-	: GameObject(parent, "Player"), hModel_(-1), gravity_(GRAVITY), velocity_(0), panch_(100), fire_(300), firePX_(0), firePY_(0), firetmp_(0), fireVec_(0)
+	: GameObject(parent, "Player"), hModel_(-1), gravity_(GRAVITY), velocity_(0), panch_(100), fire_(200), firePX_(0), firePY_(0), firetmp_(0), fireVec_(0)
 {
 	/*CsvReader csv;
 	csv.Load("jamp.csv");*/
@@ -59,7 +59,7 @@ void Player::Update()
 
 
 
-	if (Input::IsKey(DIK_D))
+	if (Input::IsKey(DIK_RIGHT))
 	{
 		if (transform_.position_.x <= 20) {
 			
@@ -73,7 +73,7 @@ void Player::Update()
 			
 
 	}
-	if (Input::IsKey(DIK_A))
+	if (Input::IsKey(DIK_LEFT))
 	{
 		if (transform_.position_.x >= -20) {
 
@@ -92,17 +92,25 @@ void Player::Update()
 			Instantiate<PanchRight>(this);
 		}
 		if (transform_.rotate_.y == -90) {
-			Instantiate<PanchLeft>(this);
+			Instantiate<PanchRight>(this);
 		}
 		panch_ = 0;
 
 	}
 
-	if (Input::IsKeyDown(DIK_F) && fire_ >= 300 || firetmp_ == 1)
+	if (Input::IsKeyDown(DIK_F) && fire_ >= 2)
 	{
 		Instantiate<Fire>(this);
-		fire_ = 0;
 
+	}
+	if (FindChildObject("Fire")) {
+		Fire* pFire = static_cast<Fire*>(this->GetParent());
+		XMFLOAT3 fireP = pFire->GetPosition();
+
+		//本来なら地面についてから200カウントしたら炎が消えるからそこから出せるようにしたかったけど常に0が入るから利用しちゃおう
+		if (fireP.y <= 0) {
+			fire_ = 0;
+		}
 	}
 
 }

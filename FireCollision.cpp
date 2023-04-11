@@ -42,7 +42,7 @@ void FireCollision::Update()
 //•`‰æ
 void FireCollision::Draw()
 {
-	CollisionDraw();
+	//CollisionDraw();
 }
 
 //ŠJ•ú
