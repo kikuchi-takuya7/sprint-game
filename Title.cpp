@@ -20,7 +20,6 @@ void Title::Initialize()
 	assert(hPict_ >= 0);
 
 	pText_ = new Text;
-
 	pText_->Initialize();
 	
 }

@@ -1,10 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
-
+#include "Engine/Text.h"
 
 //■■シーンを管理するクラス
 class Tutorial : public GameObject
 {
+
+	Text* pText_;
+
+	int texttime_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

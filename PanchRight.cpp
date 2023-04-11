@@ -1,4 +1,5 @@
 #include "PanchRight.h"
+#include "Player.h"
 #include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
@@ -24,8 +25,7 @@ void PanchRight::Initialize()
 	hModel_ = Model::Load("attack player.fbx");
 	assert(hModel_ >= 0);
 
-	BoxCollider* collision = new BoxCollider(XMFLOAT3(1, 1, 0), XMFLOAT3(1, 0.3, 0.5));
-	AddCollider(collision);
+	
 	
 }
 
@@ -33,8 +33,24 @@ void PanchRight::Initialize()
 void PanchRight::Update()
 {
 
-	limit_--;
 
+	Player* pPlayer = static_cast<Player*>(this->GetParent());
+	XMFLOAT3 panchR = pPlayer->GetRotate();
+
+	BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 1, 0), XMFLOAT3(1, 0.3, 0.5));
+
+	if (panchR.y == 90) {
+		collision = new BoxCollider(XMFLOAT3(1, 1, 0), XMFLOAT3(1, 0.3, 0.5));
+	}
+	if (panchR.y == -90) {
+		collision = new BoxCollider(XMFLOAT3(-1, 1, 0), XMFLOAT3(1, 0.3, 0.5));
+	}
+
+	ClearCollider();
+	AddCollider(collision);
+
+
+	limit_--;
 	if (limit_ == 0) {
 		KillMe();
 	}

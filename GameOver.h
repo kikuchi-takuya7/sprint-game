@@ -1,6 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
-
+#include "Engine/Text.h"
 
 //■■シーンを管理するクラス
 class GameOver : public GameObject
@@ -8,6 +8,7 @@ class GameOver : public GameObject
 
 	int hPict_;    //画像番号
 	int opacity_;
+	Text* pText_;
 
 public:
 	//コンストラクタ
