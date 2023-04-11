@@ -1,4 +1,5 @@
 #include "GameOver.h"
+#include "GameScene.h"
 #include "Engine/Image.h"
 #include "Engine/Input.h"
 
@@ -29,7 +30,7 @@ void GameOver::Update()
 	opacity_ -= 3;
 
 	if (Input::IsKeyDown(DIK_RETURN)) {
-		//Instantiate<>(this);
+		Instantiate<GameScene>(this);
 	}
 	
 }
