@@ -56,12 +56,12 @@ void Core::OnCollision(GameObject* pTarget)
 	if (pTarget->GetObjectName() == "EnemyRight")
 	{
 		die_ = 0;
-		Instantiate<GameOver>(this);
+		Instantiate<GameOver>(this->GetParent());
 	}
 
 	if (pTarget->GetObjectName() == "EnemyLeft")
 	{
 		die_ = 0;
-		Instantiate<GameOver>(this);
+		Instantiate<GameOver>(this->GetParent());
 	}
 }
