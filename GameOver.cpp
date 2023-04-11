@@ -30,7 +30,7 @@ void GameOver::Update()
 	opacity_ -= 3;
 
 	if (Input::IsKeyDown(DIK_RETURN)) {
-		Instantiate<GameScene>(this);
+		//Instantiate<GameScene>(this);
 	}
 	
 }
