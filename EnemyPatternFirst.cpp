@@ -75,12 +75,6 @@ void EnemyPatternFirst::Update()
 			Instantiate<GameClear>(this);
 			tmp_ = false;
 		}
-
-		/*if (pGameobject == nullptr && pGame == nullptr && tmp_ == true) {
-			Instantiate<GameClear>(this);
-			tmp_ = false;
-		}*/
-
 	}
 
 }
