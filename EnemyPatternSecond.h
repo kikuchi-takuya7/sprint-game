@@ -2,7 +2,7 @@
 #include "Engine/GameObject.h"
 
 //◆◆◆を管理するクラス
-class EnemyPatternFirst : public GameObject
+class EnemyPatternSecond : public GameObject
 {
     int x_;
     int count_;
@@ -14,10 +14,10 @@ class EnemyPatternFirst : public GameObject
 
 public:
     //コンストラクタ
-    EnemyPatternFirst(GameObject* parent);
+    EnemyPatternSecond(GameObject* parent);
 
     //デストラクタ
-    ~EnemyPatternFirst();
+    ~EnemyPatternSecond();
 
     //初期化
     void Initialize() override;

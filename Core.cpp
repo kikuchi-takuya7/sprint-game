@@ -32,9 +32,6 @@ void Core::Update()
 {
 	transform_.rotate_.y += 1;
 
-	if (die_ == 0) {
-		KillMe();
-	}
 }
 
 //•`‰æ
@@ -55,13 +52,11 @@ void Core::OnCollision(GameObject* pTarget)
 	//“–‚½‚Á‚½‚Æ‚«‚Ìˆ—
 	if (pTarget->GetObjectName() == "EnemyRight")
 	{
-		die_ = 0;
-		Instantiate<GameOver>(this->GetParent());
+		KillMe();
 	}
 
 	if (pTarget->GetObjectName() == "EnemyLeft")
 	{
-		die_ = 0;
-		Instantiate<GameOver>(this->GetParent());
+		KillMe();
 	}
 }

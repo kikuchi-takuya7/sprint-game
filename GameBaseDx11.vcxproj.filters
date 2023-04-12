@@ -110,6 +110,9 @@
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="Tutorial.cpp" />
+    <ClCompile Include="GameClear.cpp" />
+    <ClCompile Include="GameSceneSecond.cpp" />
+    <ClCompile Include="EnemyPatternSecond.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -196,6 +199,9 @@
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="Tutorial.h" />
+    <ClInclude Include="GameClear.h" />
+    <ClInclude Include="GameSceneSecond.h" />
+    <ClInclude Include="EnemyPatternSecond.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

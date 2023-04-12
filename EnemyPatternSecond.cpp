@@ -1,4 +1,4 @@
-#include "EnemyPatternFirst.h"
+#include "EnemyPatternSecond.h"
 #include "EnemyLeft.h"
 #include "EnemyRight.h"
 #include "GameClear.h"
@@ -8,11 +8,11 @@
 #define MAXENEMY 16
 
 //コンストラクタ
-EnemyPatternFirst::EnemyPatternFirst(GameObject* parent)
-	:GameObject(parent, "EnemyPatternFirst"), hModel_(-1), epattern_(0), height_(0), count_(0), x_(0), tmp_(true)
+EnemyPatternSecond::EnemyPatternSecond(GameObject* parent)
+	:GameObject(parent, "EnemyPatternSecond"), hModel_(-1), epattern_(0), height_(0), count_(0), x_(0), tmp_(true)
 {
 	CsvReader csv;
-	csv.Load("First enemy pattern.csv");
+	csv.Load("Second enemy pattern.csv");
 
 	epattern_ = csv.GetWidth();
 	height_ = csv.GetHeight();
@@ -33,23 +33,24 @@ EnemyPatternFirst::EnemyPatternFirst(GameObject* parent)
 }
 
 //デストラクタ
-EnemyPatternFirst::~EnemyPatternFirst()
+EnemyPatternSecond::~EnemyPatternSecond()
 {
 }
 
 //初期化
-void EnemyPatternFirst::Initialize()
+void EnemyPatternSecond::Initialize()
 {
 
 }
 
 //更新
-void EnemyPatternFirst::Update()
+void EnemyPatternSecond::Update()
 {
 
 	int r = 0;
 	int l = 1;
-	
+	int s = 2;
+
 	if (x_ < epattern_) {
 		if (count_ % 60 == 0 && table_[x_][r] == 1) {
 			Instantiate<EnemyRight>(this);
@@ -57,6 +58,11 @@ void EnemyPatternFirst::Update()
 
 		if (count_ % 60 == 0 && table_[x_][l] == 1) {
 			Instantiate<EnemyLeft>(this);
+		}
+
+		if (count_ % 60 == 0 && table_[x_][s] == 1) {
+			//空飛ぶ敵
+			//Instantiate<EnemyLeft>(this);
 		}
 
 		count_++;
@@ -69,30 +75,25 @@ void EnemyPatternFirst::Update()
 
 	if (epattern_ <= x_) {
 		//ゲームクリア
-		GameObject* pGameobject = FindObject("EnemyLeft");
-		GameObject* pGame = FindObject("EnemyRight");
-		if ( !pGameobject && !pGame && tmp_ ) {
+		GameObject* pEnemyL = FindObject("EnemyLeft");
+		GameObject* pEnemyR = FindObject("EnemyRight");
+		GameObject* pEnemyS = FindObject("EnemySky");
+		if (pEnemyL == nullptr && pEnemyR == nullptr && pEnemyS == nullptr && tmp_ == true) {
 			Instantiate<GameClear>(this);
 			tmp_ = false;
 		}
-
-		/*if (pGameobject == nullptr && pGame == nullptr && tmp_ == true) {
-			Instantiate<GameClear>(this);
-			tmp_ = false;
-		}*/
-
 	}
 
 }
 
 //描画
-void EnemyPatternFirst::Draw()
+void EnemyPatternSecond::Draw()
 {
-	
+
 }
 
 //開放
-void EnemyPatternFirst::Release()
+void EnemyPatternSecond::Release()
 {
 
 	for (int x = 0; x < epattern_; x++) {

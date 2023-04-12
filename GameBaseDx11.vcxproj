@@ -126,6 +126,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="EnemyPatternSecond.cpp" />
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="EnemyLeft.cpp" />
     <ClCompile Include="Engine\Audio.cpp" />
@@ -153,8 +154,10 @@
     <ClCompile Include="Engine\Transform.cpp" />
     <ClCompile Include="EnemyPatternFirst.cpp" />
     <ClCompile Include="FireCollision.cpp" />
+    <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GameSceneSecond.cpp" />
     <ClCompile Include="MainCamera.cpp" />
     <ClCompile Include="PanchRight.cpp" />
     <ClCompile Include="PanchLeft.cpp" />
@@ -166,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core.h" />
+    <ClInclude Include="EnemyPatternSecond.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="EnemyLeft.h" />
     <ClInclude Include="Engine\Audio.h" />
@@ -193,8 +197,10 @@
     <ClInclude Include="Engine\Transform.h" />
     <ClInclude Include="EnemyPatternFirst.h" />
     <ClInclude Include="FireCollision.h" />
+    <ClInclude Include="GameClear.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="GameSceneSecond.h" />
     <ClInclude Include="MainCamera.h" />
     <ClInclude Include="PanchRight.h" />
     <ClInclude Include="PanchLeft.h" />

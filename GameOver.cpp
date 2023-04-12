@@ -27,11 +27,7 @@ void GameOver::Update()
 
 	
 	Image::SetAlpha(hPict_, opacity_);
-	opacity_ -= 3;
-
-	if (Input::IsKeyDown(DIK_RETURN)) {
-		//Instantiate<GameScene>(this);
-	}
+	opacity_ -= 2;
 	
 }
 

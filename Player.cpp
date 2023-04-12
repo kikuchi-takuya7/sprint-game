@@ -8,7 +8,7 @@
 #include "Engine/CsvReader.h"
 #include "Engine/VFX.h"
 
-#define VELOCITY 0.5
+#define VELOCITY 0.4
 #define GRAVITY 0.02
 
 //コンストラクタ
@@ -63,7 +63,7 @@ void Player::Update()
 	{
 		if (transform_.position_.x <= 20) {
 			
-			transform_.position_.x += 0.2f;
+			transform_.position_.x += 0.15f;
 		}
 
 		if (panch_ >= 60) {
@@ -77,7 +77,7 @@ void Player::Update()
 	{
 		if (transform_.position_.x >= -20) {
 
-			transform_.position_.x -= 0.2f;
+			transform_.position_.x -= 0.15f;
 		}
 
 		if (panch_ >= 60) {

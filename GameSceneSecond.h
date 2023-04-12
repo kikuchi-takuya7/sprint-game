@@ -2,14 +2,14 @@
 #include "Engine/GameObject.h"
 
 //テストシーンを管理するクラス
-class GameScene : public GameObject
+class GameSceneSecond : public GameObject
 {
 
 	bool tmp_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	GameScene(GameObject* parent);
+	GameSceneSecond(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
