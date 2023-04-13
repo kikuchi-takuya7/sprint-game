@@ -2,7 +2,8 @@
 #include "EnemyLeft.h"
 #include "EnemyRight.h"
 #include "GameClear.h"
-#include "Engine/Model.h"
+#include "Engine/Input.h"
+#include "Engine/SceneManager.h"
 #include "Engine/CsvReader.h"
 
 #define MAXENEMY 16
@@ -12,7 +13,7 @@ EnemyPatternFirst::EnemyPatternFirst(GameObject* parent)
 	:GameObject(parent, "EnemyPatternFirst"), hModel_(-1), epattern_(0), height_(0), count_(0), x_(0), tmp_(true)
 {
 	CsvReader csv;
-	csv.Load("First enemy pattern.csv");
+	csv.Load("Enemy pattern First.csv");
 
 	epattern_ = csv.GetWidth();
 	height_ = csv.GetHeight();
@@ -72,8 +73,15 @@ void EnemyPatternFirst::Update()
 		GameObject* pGameobject = FindObject("EnemyLeft");
 		GameObject* pGame = FindObject("EnemyRight");
 		if ( !pGameobject && !pGame && tmp_ ) {
+			
 			Instantiate<GameClear>(this);
 			tmp_ = false;
+		}
+
+		if (Input::IsKeyDown(DIK_RETURN) && !tmp_) {
+
+			SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+			pSceneManager->ChangeScene(SCENE_ID_SECOND);
 		}
 	}
 

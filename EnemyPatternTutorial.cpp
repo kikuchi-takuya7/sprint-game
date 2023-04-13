@@ -1,19 +1,20 @@
-#include "EnemyPatternSecond.h"
+#include "EnemyPatternTutorial.h"
 #include "EnemyLeft.h"
 #include "EnemyRight.h"
 #include "EnemySky.h"
-#include "GameClearEnding.h"
-#include "Engine/Model.h"
+#include "GameClear.h"
+#include "Engine/Input.h"
+#include "Engine/SceneManager.h"
 #include "Engine/CsvReader.h"
 
 #define MAXENEMY 16
 
 //コンストラクタ
-EnemyPatternSecond::EnemyPatternSecond(GameObject* parent)
-	:GameObject(parent, "EnemyPatternSecond"), hModel_(-1), epattern_(0), height_(0), count_(0), x_(0), tmp_(true)
+EnemyPatternTutorial::EnemyPatternTutorial(GameObject* parent)
+	:GameObject(parent, "EnemyPatternTutorial"), hModel_(-1), epattern_(0), height_(0), count_(0), x_(0), tmp_(true)
 {
 	CsvReader csv;
-	csv.Load("Enemy pattern Second.csv");
+	csv.Load("Enemy pattern Tutorial.csv");
 
 	epattern_ = csv.GetWidth();
 	height_ = csv.GetHeight();
@@ -34,18 +35,18 @@ EnemyPatternSecond::EnemyPatternSecond(GameObject* parent)
 }
 
 //デストラクタ
-EnemyPatternSecond::~EnemyPatternSecond()
+EnemyPatternTutorial::~EnemyPatternTutorial()
 {
 }
 
 //初期化
-void EnemyPatternSecond::Initialize()
+void EnemyPatternTutorial::Initialize()
 {
 
 }
 
 //更新
-void EnemyPatternSecond::Update()
+void EnemyPatternTutorial::Update()
 {
 
 	int r = 0;
@@ -74,26 +75,16 @@ void EnemyPatternSecond::Update()
 		x_++;
 	}
 
-	if (epattern_ <= x_) {
-		//ゲームクリア
-		GameObject* pEnemyL = FindObject("EnemyLeft");
-		GameObject* pEnemyR = FindObject("EnemyRight");
-		if ( !pEnemyL && !pEnemyR && tmp_ ) {
-			Instantiate<GameClearEnding>(this);
-			tmp_ = false;
-		}
-	}
-
 }
 
 //描画
-void EnemyPatternSecond::Draw()
+void EnemyPatternTutorial::Draw()
 {
 
 }
 
 //開放
-void EnemyPatternSecond::Release()
+void EnemyPatternTutorial::Release()
 {
 
 	for (int x = 0; x < epattern_; x++) {

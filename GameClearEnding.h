@@ -1,21 +1,17 @@
 #pragma once
-#include "Engine/GameObject.h"
 #include "Engine/Text.h"
+#include "Engine/GameObject.h"
+
 
 //■■シーンを管理するクラス
-class Tutorial : public GameObject
+class GameClearEnding : public GameObject
 {
-
 	Text* pText_;
 
-	GameObject* pEnemy_;
-	XMFLOAT3 arrow_;
-
-	int texttime_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Tutorial(GameObject* parent);
+	GameClearEnding(GameObject* parent);
 
 	//初期化
 	void Initialize() override;

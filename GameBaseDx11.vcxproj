@@ -125,8 +125,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BulletSky.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="EnemyPatternSecond.cpp" />
+    <ClCompile Include="EnemyPatternTutorial.cpp" />
+    <ClCompile Include="EnemySky.cpp" />
     <ClCompile Include="Fire.cpp" />
     <ClCompile Include="EnemyLeft.cpp" />
     <ClCompile Include="Engine\Audio.cpp" />
@@ -155,12 +158,13 @@
     <ClCompile Include="EnemyPatternFirst.cpp" />
     <ClCompile Include="FireCollision.cpp" />
     <ClCompile Include="GameClear.cpp" />
+    <ClCompile Include="GameClearEnding.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameSceneSecond.cpp" />
     <ClCompile Include="MainCamera.cpp" />
-    <ClCompile Include="PanchRight.cpp" />
-    <ClCompile Include="PanchLeft.cpp" />
+    <ClCompile Include="NewWeaponFirst.cpp" />
+    <ClCompile Include="Panch.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="EnemyRight.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -168,8 +172,11 @@
     <ClCompile Include="Tutorial.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BulletSky.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="EnemyPatternSecond.h" />
+    <ClInclude Include="EnemyPatternTutorial.h" />
+    <ClInclude Include="EnemySky.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="EnemyLeft.h" />
     <ClInclude Include="Engine\Audio.h" />
@@ -198,12 +205,13 @@
     <ClInclude Include="EnemyPatternFirst.h" />
     <ClInclude Include="FireCollision.h" />
     <ClInclude Include="GameClear.h" />
+    <ClInclude Include="GameClearEnding.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameSceneSecond.h" />
     <ClInclude Include="MainCamera.h" />
-    <ClInclude Include="PanchRight.h" />
-    <ClInclude Include="PanchLeft.h" />
+    <ClInclude Include="NewWeaponFirst.h" />
+    <ClInclude Include="Panch.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="EnemyRight.h" />
     <ClInclude Include="Stage.h" />

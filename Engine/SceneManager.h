@@ -8,7 +8,7 @@ enum SCENE_ID
 	SCENE_ID_MAIN = 0,
 	SCENE_ID_TITLE,
 	SCENE_ID_TUTORIAL,
-
+	SCENE_ID_SECOND,
 };
 
 //-----------------------------------------------------------

@@ -103,9 +103,8 @@
     <ClCompile Include="EnemyLeft.cpp" />
     <ClCompile Include="EnemyPatternFirst.cpp" />
     <ClCompile Include="EnemyRight.cpp" />
-    <ClCompile Include="PanchRight.cpp" />
+    <ClCompile Include="Panch.cpp" />
     <ClCompile Include="Fire.cpp" />
-    <ClCompile Include="PanchLeft.cpp" />
     <ClCompile Include="FireCollision.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Title.cpp" />
@@ -113,6 +112,11 @@
     <ClCompile Include="GameClear.cpp" />
     <ClCompile Include="GameSceneSecond.cpp" />
     <ClCompile Include="EnemyPatternSecond.cpp" />
+    <ClCompile Include="EnemySky.cpp" />
+    <ClCompile Include="BulletSky.cpp" />
+    <ClCompile Include="GameClearEnding.cpp" />
+    <ClCompile Include="NewWeaponFirst.cpp" />
+    <ClCompile Include="EnemyPatternTutorial.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -192,9 +196,8 @@
     <ClInclude Include="EnemyLeft.h" />
     <ClInclude Include="EnemyPatternFirst.h" />
     <ClInclude Include="EnemyRight.h" />
-    <ClInclude Include="PanchRight.h" />
+    <ClInclude Include="Panch.h" />
     <ClInclude Include="Fire.h" />
-    <ClInclude Include="PanchLeft.h" />
     <ClInclude Include="FireCollision.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="Title.h" />
@@ -202,6 +205,11 @@
     <ClInclude Include="GameClear.h" />
     <ClInclude Include="GameSceneSecond.h" />
     <ClInclude Include="EnemyPatternSecond.h" />
+    <ClInclude Include="EnemySky.h" />
+    <ClInclude Include="BulletSky.h" />
+    <ClInclude Include="GameClearEnding.h" />
+    <ClInclude Include="NewWeaponFirst.h" />
+    <ClInclude Include="EnemyPatternTutorial.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

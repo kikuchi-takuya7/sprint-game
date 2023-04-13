@@ -1,6 +1,5 @@
 #include "Player.h"
-#include "PanchRight.h"
-#include "PanchLeft.h"
+#include "Panch.h"
 #include "Fire.h"
 #include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
@@ -86,16 +85,13 @@ void Player::Update()
 		}
 	}
 
+	
+
 	if (Input::IsKeyDown(DIK_V) && panch_ >= 100)
 	{
-		if (transform_.rotate_.y == 90) {
-			Instantiate<PanchRight>(this);
-		}
-		if (transform_.rotate_.y == -90) {
-			Instantiate<PanchRight>(this);
-		}
+		
+		Instantiate<Panch>(this);
 		panch_ = 0;
-
 	}
 
 	if (Input::IsKeyDown(DIK_F) && fire_ >= 2)
@@ -139,6 +135,11 @@ void Player::OnCollision(GameObject* pTarget)
 	}
 
 	if (pTarget->GetObjectName() == "EnemyLeft")
+	{
+		KillMe();
+	}
+
+	if (pTarget->GetObjectName() == "BulletSky")
 	{
 		KillMe();
 	}

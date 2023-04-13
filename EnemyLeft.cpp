@@ -52,12 +52,7 @@ void EnemyLeft::Release()
 void EnemyLeft::OnCollision(GameObject* pTarget)
 {
 	//“–‚½‚Á‚½‚Æ‚«‚Ìˆ—
-	if (pTarget->GetObjectName() == "PanchRight")
-	{
-		KillMe();
-	}
-
-	if (pTarget->GetObjectName() == "PanchLeft")
+	if (pTarget->GetObjectName() == "Panch")
 	{
 		KillMe();
 	}

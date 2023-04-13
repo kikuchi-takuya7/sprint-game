@@ -3,19 +3,16 @@
 #include "Engine/Text.h"
 
 //■■シーンを管理するクラス
-class Tutorial : public GameObject
+class NewWeaponFirst : public GameObject
 {
 
 	Text* pText_;
-
-	GameObject* pEnemy_;
-	XMFLOAT3 arrow_;
 
 	int texttime_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Tutorial(GameObject* parent);
+	NewWeaponFirst(GameObject* parent);
 
 	//初期化
 	void Initialize() override;

@@ -1,18 +1,19 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-class PanchLeft : public GameObject
-
+//◆◆◆を管理するクラス
+class EnemySky : public GameObject
 {
-
     int hModel_;
-    int limit_;
-    int tmp_;
+    int attack_;
+    int randm_;
 
 public:
+    //コンストラクタ
+    EnemySky(GameObject* parent);
 
-    PanchLeft(GameObject* parent);
-    ~PanchLeft();
+    //デストラクタ
+    ~EnemySky();
 
     //初期化
     void Initialize() override;
@@ -26,8 +27,6 @@ public:
     //開放
     void Release() override;
 
-    //何かに当たった
     //引数：pTarget 当たった相手
     void OnCollision(GameObject* pTarget) override;
-
 };

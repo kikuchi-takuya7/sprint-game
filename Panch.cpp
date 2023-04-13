@@ -1,4 +1,4 @@
-#include "PanchRight.h"
+#include "Panch.h"
 #include "Player.h"
 #include "Engine/BoxCollider.h"
 #include "Engine/Model.h"
@@ -8,18 +8,18 @@
 #define LIMIT 60
 
 //コンストラクタ
-PanchRight::PanchRight(GameObject* parent)
-	:GameObject(parent, "PanchRight"), hModel_(-1), limit_(LIMIT), tmp_(0)
+Panch::Panch(GameObject* parent)
+	:GameObject(parent, "Panch"), hModel_(-1), limit_(LIMIT), tmp_(0)
 {
 }
 
 //デストラクタ
-PanchRight::~PanchRight()
+Panch::~Panch()
 {
 }
 
 //初期化
-void PanchRight::Initialize()
+void Panch::Initialize()
 {
 	//モデルデータのロード
 	hModel_ = Model::Load("attack player.fbx");
@@ -30,7 +30,7 @@ void PanchRight::Initialize()
 }
 
 //更新
-void PanchRight::Update()
+void Panch::Update()
 {
 
 
@@ -60,7 +60,7 @@ void PanchRight::Update()
 }
 
 //描画
-void PanchRight::Draw()
+void Panch::Draw()
 {
 	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
@@ -68,12 +68,12 @@ void PanchRight::Draw()
 }
 
 //開放
-void PanchRight::Release()
+void Panch::Release()
 {
 }
 
 //何かに当たった
-void PanchRight::OnCollision(GameObject* pTarget)
+void Panch::OnCollision(GameObject* pTarget)
 {
 	//当たったときの処理
 	
