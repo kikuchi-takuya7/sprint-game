@@ -5,13 +5,9 @@
 class Player : public GameObject
 {
 	int hModel_;    //モデル番号
-	int panch_;
-	int fire_;
-	float firePX_;
-	float firePY_;
-	int firetmp_;
-	float fireVec_;
-	bool jump_;
+	int panch_; //パンチのクールダウン
+	int fire_; //fireのクールダウン
+	bool jump_; //ジャンプは一回だけ
 
 	float gravity_, velocity_;//重力と初速
 

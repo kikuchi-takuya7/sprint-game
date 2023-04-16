@@ -12,7 +12,7 @@
 
 //コンストラクタ
 Player::Player(GameObject* parent)
-	: GameObject(parent, "Player"), hModel_(-1), gravity_(GRAVITY), velocity_(0), panch_(100), fire_(200), firePX_(0), firePY_(0), firetmp_(0), fireVec_(0), jump_(true)
+	: GameObject(parent, "Player"), hModel_(-1), gravity_(GRAVITY), velocity_(0), panch_(100), fire_(200), jump_(true)
 {
 	/*CsvReader csv;
 	csv.Load("jamp.csv");*/
