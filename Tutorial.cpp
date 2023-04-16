@@ -9,7 +9,7 @@
 
 //コンストラクタ
 Tutorial::Tutorial(GameObject* parent)
-	: GameObject(parent, "Tutorial"), texttime_(0)
+	: GameObject(parent, "Tutorial")
 {
 }
 
@@ -32,14 +32,6 @@ void Tutorial::Initialize()
 void Tutorial::Update()
 {
 
-	pEnemy_ = FindObject("EnemyRight");
-
-	if (pEnemy_) {
-		arrow_ = pEnemy_->GetPosition();
-	}
-
-	texttime_++;
-
 	if (Input::IsKeyDown(DIK_RETURN)) {
 
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
@@ -56,7 +48,6 @@ void Tutorial::Draw()
 	pText_->Draw(10, 55, "V => panch \rSPACE => jump");
 	pText_->Draw(10, 90, "F => fire *Only one on screen ");
 	pText_->Draw(10, 125, "core break = you die");
-	pText_->Draw(arrow_.x, arrow_.y, "Enemy");
 	
 
 }

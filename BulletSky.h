@@ -2,7 +2,7 @@
 #include "Engine/GameObject.h"
 
 
-//■■シーンを管理するクラス
+//空を飛ぶ敵の球を管理するクラス
 class BulletSky : public GameObject
 {
 	int hModel_;

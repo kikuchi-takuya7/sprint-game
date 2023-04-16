@@ -1,7 +1,7 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//◆◆◆を管理するクラス
+//右からくる敵を管理するクラス
 class EnemyRight : public GameObject
 {
     int hModel_;

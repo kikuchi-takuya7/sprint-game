@@ -3,7 +3,7 @@
 #include "Engine/GameObject.h"
 
 
-//■■シーンを管理するクラス
+//ゲーム完全クリアを管理するクラス
 class GameClearEnding : public GameObject
 {
 	Text* pText_;

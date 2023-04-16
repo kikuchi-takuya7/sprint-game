@@ -11,6 +11,7 @@ class Player : public GameObject
 	float firePY_;
 	int firetmp_;
 	float fireVec_;
+	bool jump_;
 
 	float gravity_, velocity_;//d—Í‚Æ‰‘¬
 

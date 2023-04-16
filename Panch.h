@@ -6,8 +6,7 @@ class Panch : public GameObject
 {
 
     int hModel_;
-    int limit_;
-    int tmp_;
+    int limit_; //ƒpƒ“ƒ`‚Ì‘±ŠÔ
 
 public:
 

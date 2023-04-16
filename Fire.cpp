@@ -11,7 +11,7 @@
 
 //コンストラクタ
 Fire::Fire(GameObject* parent)
-	:GameObject(parent, "Fire"), hModel_(-1), limit_(LIMIT), firePositionY_(2), firePositionX_(0)
+	:GameObject(parent, "Fire"), hModel_(-1), limit_(LIMIT)
 {
 }
 

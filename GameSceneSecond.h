@@ -1,7 +1,7 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//テストシーンを管理するクラス
+//第二ステージを管理するクラス
 class GameSceneSecond : public GameObject
 {
 

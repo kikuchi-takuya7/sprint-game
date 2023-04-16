@@ -8,10 +8,6 @@ class Tutorial : public GameObject
 
 	Text* pText_;
 
-	GameObject* pEnemy_;
-	XMFLOAT3 arrow_;
-
-	int texttime_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

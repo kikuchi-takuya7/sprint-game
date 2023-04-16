@@ -3,7 +3,7 @@
 #include "Engine/GameObject.h"
 
 
-//■■シーンを管理するクラス
+//ゲームクリアを管理するクラス
 class GameClear : public GameObject
 {
 	Text* pText_;

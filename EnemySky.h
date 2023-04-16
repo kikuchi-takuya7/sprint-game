@@ -1,12 +1,12 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//◆◆◆を管理するクラス
+//空を飛ぶ敵を管理するクラス
 class EnemySky : public GameObject
 {
     int hModel_;
-    int attack_;
-    int randm_;
+    int attack_; //攻撃のタイミングを管理
+    int randm_; //左右どっちから来るかランダム
 
 public:
     //コンストラクタ

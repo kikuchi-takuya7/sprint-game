@@ -6,7 +6,7 @@
 
 //コンストラクタ
 Core::Core(GameObject* parent)
-    :GameObject(parent, "Core"), hModel_(-1), die_(1)
+    :GameObject(parent, "Core"), hModel_(-1)
 {
 }
 

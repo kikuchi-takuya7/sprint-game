@@ -12,7 +12,7 @@
 
 //コンストラクタ
 Player::Player(GameObject* parent)
-	: GameObject(parent, "Player"), hModel_(-1), gravity_(GRAVITY), velocity_(0), panch_(100), fire_(200), firePX_(0), firePY_(0), firetmp_(0), fireVec_(0)
+	: GameObject(parent, "Player"), hModel_(-1), gravity_(GRAVITY), velocity_(0), panch_(100), fire_(200), firePX_(0), firePY_(0), firetmp_(0), fireVec_(0), jump_(true)
 {
 	/*CsvReader csv;
 	csv.Load("jamp.csv");*/
@@ -38,8 +38,8 @@ void Player::Update()
 	
 	Cooldown();
 
-	transform_.position_.y += velocity_;
-
+	
+	// ジャンプが頂点に達すると早く落ちるように
 	if (velocity_ < gravity_) {
 		velocity_ -= gravity_ * 2;
 	}
@@ -47,13 +47,17 @@ void Player::Update()
 		velocity_ -= gravity_;
 	}
 
-	if (Input::IsKeyDown(DIK_SPACE))
+	if (Input::IsKeyDown(DIK_SPACE) && jump_ == true)
 	{
 		velocity_ = VELOCITY;
+		jump_ = false;
 	}
+
+	transform_.position_.y += velocity_;
 
 	if (transform_.position_.y <= 0) {
 		transform_.position_.y = 0;
+		jump_ = true;
 	}
 
 

@@ -1,16 +1,15 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//◆◆◆を管理するクラス
+//敵パターンチュートリアルを管理するクラス
 class EnemyPatternTutorial : public GameObject
 {
-    int x_;
-    int count_;
-    int hModel_;
-    int epattern_;
-    int height_;
-    int** table_;
-    bool tmp_;
+    int x_; //CSVの一列目から順番に読み取る為の変数
+    int count_; //毎フレームのカウント
+    int hModel_; 
+    int epattern_; //enemy pattern 敵の最大数
+    int height_; //行数が難行あるか
+    int** table_; //ポインタ配列にCSVデータを入れる
 
 public:
     //コンストラクタ

@@ -9,7 +9,7 @@
 
 //コンストラクタ
 Panch::Panch(GameObject* parent)
-	:GameObject(parent, "Panch"), hModel_(-1), limit_(LIMIT), tmp_(0)
+	:GameObject(parent, "Panch"), hModel_(-1), limit_(LIMIT)
 {
 }
 

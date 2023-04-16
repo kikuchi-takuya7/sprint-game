@@ -2,14 +2,14 @@
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
 
-//テストシーンを管理するクラス
+//タイトルを管理するクラス
 class Title : public GameObject
 {
 	int hPict_;    //画像番号
 	Text* pText_;
-	int tmp_;
-	int flash_;
-	int start_;
+	int tmp_; //時間差で画面が切り替わるように
+	int flash_; //pleas spaceの点滅
+	int start_; //点滅を早くする為の変数
 
 public:
 	//コンストラクタ

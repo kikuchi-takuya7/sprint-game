@@ -2,7 +2,8 @@
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
 
-//■■シーンを管理するクラス
+//新しい装備獲得を管理するクラス
+//ぶっちゃけ諦めた
 class NewWeaponFirst : public GameObject
 {
 

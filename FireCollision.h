@@ -1,11 +1,11 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//◆◆◆を管理するクラス
+//炎の当たり判定を管理するクラス
 class FireCollision : public GameObject
 {
     
-    XMFLOAT3 fireCP_;
+    XMFLOAT3 fireCP_; //fireクラスの座標を入れる
 
 public:
     //コンストラクタ

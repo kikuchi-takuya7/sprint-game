@@ -1,11 +1,10 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//◆◆◆を管理するクラス
+//コアを管理するクラス
 class Core : public GameObject
 {
     int hModel_;
-    int die_;
 
 public:
     //コンストラクタ

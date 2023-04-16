@@ -11,7 +11,7 @@
 
 //コンストラクタ
 EnemyPatternTutorial::EnemyPatternTutorial(GameObject* parent)
-	:GameObject(parent, "EnemyPatternTutorial"), hModel_(-1), epattern_(0), height_(0), count_(0), x_(0), tmp_(true)
+	:GameObject(parent, "EnemyPatternTutorial"), hModel_(-1), epattern_(0), height_(0), count_(0), x_(0)
 {
 	CsvReader csv;
 	csv.Load("Enemy pattern Tutorial.csv");

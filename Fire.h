@@ -1,19 +1,13 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-//◆◆◆を管理するクラス
+//炎を管理するクラス
 class Fire : public GameObject
 {
     int hModel_;
-    int limit_;
-    float firePositionY_;
-    float firePositionX_;
-    //Player* pPlayer_;
-    XMFLOAT3 fireV_;
-    //SphereCollider* collision;
-
-//public:
-    XMFLOAT3 fireP_;
+    int limit_; //地面に着いてからの持続
+    XMFLOAT3 fireV_; //炎の向き
+    XMFLOAT3 fireP_; //炎の位置
 
 public:
     //コンストラクタ
