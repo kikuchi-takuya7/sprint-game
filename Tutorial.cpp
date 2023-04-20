@@ -44,7 +44,7 @@ void Tutorial::Update()
 void Tutorial::Draw()
 {
 	pText_->Draw(1000, 20, "Let's go! => ENTER");
-	pText_->Draw(10, 20, "direction key => move");
+	pText_->Draw(10, 20, "<- ->  => move");
 	pText_->Draw(10, 55, "V => panch \rSPACE => jump");
 	pText_->Draw(10, 90, "F => fire *Only one on screen ");
 	pText_->Draw(10, 125, "core break = you die");
