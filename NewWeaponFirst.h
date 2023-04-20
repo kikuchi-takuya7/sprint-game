@@ -2,8 +2,8 @@
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
 
-//新しい装備獲得を管理するクラス
-//ぶっちゃけ諦めた
+//新しい装備取得を管理するクラス
+//多分ウェポンクラスを作ってそれをプレイヤーが呼び出すことでウェポンクラスに設定されている武器を使うみたいな感じで武器切り替えみたいな事ができるかも
 class NewWeaponFirst : public GameObject
 {
 

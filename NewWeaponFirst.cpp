@@ -16,11 +16,6 @@ NewWeaponFirst::NewWeaponFirst(GameObject* parent)
 void NewWeaponFirst::Initialize()
 {
 
-	Instantiate<Player>(this);
-	Instantiate<Stage>(this);
-	Instantiate<MainCamera>(this);
-	Instantiate<Core>(this);
-
 	pText_ = new Text;
 	pText_->Initialize();
 
@@ -32,11 +27,12 @@ void NewWeaponFirst::Update()
 
 	texttime_++;
 
+	if (Input::IsKeyDown(DIK_A)) {
 
-	if (Input::IsKeyDown(DIK_RETURN)) {
+	}
 
-		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-		pSceneManager->ChangeScene(SCENE_ID_MAIN);
+	if (Input::IsKeyDown(DIK_D)) {
+
 	}
 
 }
@@ -44,11 +40,8 @@ void NewWeaponFirst::Update()
 //•`‰æ
 void NewWeaponFirst::Draw()
 {
-	pText_->Draw(1000, 20, "Let's go! => ENTER");
-	pText_->Draw(10, 20, "direction key => move");
-	pText_->Draw(10, 55, "V => panch \rSPACE => jump");
-	pText_->Draw(10, 90, "F => fire *Only one on screen ");
-	pText_->Draw(10, 125, "core break = you die");
+	
+	pText_->Draw(50, 150, "core break = you die");
 
 	if (0 <= texttime_ && texttime_ <= 120) {
 		pText_->Draw(10, 20, "");
